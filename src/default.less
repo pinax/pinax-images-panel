@@ -1,0 +1,93 @@
+// Intended for use with Bootstrap 3
+
+.media-panel {
+  .panel;
+  .panel-default;
+  .panel-footer, .panel-heading {
+      .text-right;
+  }
+  .btn-add-image {
+      .btn;
+      .btn-success;
+      position: relative;
+      overflow: hidden;
+  }
+  .btn-add-image input[type=file] {
+      position: absolute;
+      top: 0;
+      right: 0;
+      min-width: 100%;
+      min-height: 100%;
+      font-size: 100px;
+      text-align: right;
+      filter: alpha(opacity=0);
+      opacity: 0;
+      outline: none;
+      background: white;
+      cursor: inherit;
+      display: block;
+  }
+
+  .panel-heading {
+    h2 {
+      .panel-title;
+    }
+  }
+  .primary {
+    border: 2px solid;
+    border-color: @brand-success;
+  }
+  .panel-body {
+      .selected-image {
+          margin: auto;
+          width: 310px;
+          height: 310px;
+          #overlay {
+              background:rgba(0,0,0,.75);
+              text-align:center;
+              padding-top:129px;
+              opacity:0;
+              -webkit-transition: opacity .25s ease;
+              -moz-transition: opacity .25s ease;
+              height: 100%;
+          }
+          &.primary {
+              #overlay:hover {
+                  .make-primary-image {
+                      color: @brand-success;
+                  }
+              }
+          }
+          &:hover {
+              #overlay {
+                  opacity: 1;
+                  .delete-image {
+                      .text-danger;
+                  }
+                  .make-primary-image {
+                      color: white;
+                      &:hover {
+                          .text-success;
+                      }
+                  }
+              }
+          }
+          &.empty {
+              #overlay { display: none }
+          }
+      }
+      .image-list {
+          overflow: auto;
+          height: 310px;
+          img {
+              .img-thumbnail;
+              margin-bottom: 8px;
+              cursor: pointer;
+              &.primary {
+                  border: 2px solid;
+                  border-color: @brand-success;
+              }
+          }
+      }
+  }
+}

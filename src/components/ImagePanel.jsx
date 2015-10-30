@@ -25,7 +25,7 @@ var ImagePanel = React.createClass({
     componentDidMount: function () {
         if (this.props.imagesUrl) {
             helpers
-              .getUrl(this.props.imagesUrl)
+              .getImages(this.props.imagesUrl)
               .then(this.refreshWithResponse);
         }
     },
@@ -99,14 +99,6 @@ var ImagePanel = React.createClass({
         }
         return (
             <div className="media-panel">
-                <div className="panel-heading">
-                    <AddImage uploadUrl={this.state.uploadUrl}
-                              onUploadComplete={this.onUploadComplete}
-                              onFileUploadComplete={this.onFileUploadComplete}
-                              onFileProgress={this.onFileProgress}
-                              onUploadStart={this.onUploadStart} />
-                    <h2>Images</h2>
-                </div>
                 <div className="panel-body">
                     {progressBar}
                     <div className="row">
@@ -118,6 +110,13 @@ var ImagePanel = React.createClass({
                     </div>
                 </div>
                 {imageSet}
+                <div className="panel-footer">
+                    <AddImage uploadUrl={this.state.uploadUrl}
+                              onUploadComplete={this.onUploadComplete}
+                              onFileUploadComplete={this.onFileUploadComplete}
+                              onFileProgress={this.onFileProgress}
+                              onUploadStart={this.onUploadStart} />
+                </div>
             </div>
         );
     }

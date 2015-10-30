@@ -66,11 +66,8 @@ var AddImage = React.createClass({
     },
     render: function () {
         return (
-            <span className="add-button">
-                <h4>Drop an image</h4>
-                <span>or</span>
-                <a href="#" className="btn btn-success">Browse</a>
-                <input type="file" name="files" multiple onChange={this.handleChange} />
+            <span className="btn-add-image">
+                Browse <input type="file" name="files" multiple onChange={this.handleChange} />
             </span>
         );
     }
