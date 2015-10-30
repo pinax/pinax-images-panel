@@ -1,0 +1,30 @@
+{
+  "name": "pinax-images-panel",
+  "version": "1.0.0",
+  "description": "a React component for uploading and managing images with the pinax-images Django reusable app",
+  "main": "dist/pinax-images-panel.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/pinax/pinax-images-panel.git"
+  },
+  "keywords": [
+    "react-component",
+    "pinax",
+    "images",
+    "django"
+  ],
+  "author": "Pinax Developers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pinax/pinax-images/issues"
+  },
+  "homepage": "https://github.com/pinax/pinax-images#readme",
+  "dependencies": {
+    "axios": "^0.7.0",
+    "fileapi": "^2.0.17",
+    "react": "^0.14.1"
+  }
+}
