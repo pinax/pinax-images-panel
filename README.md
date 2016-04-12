@@ -30,7 +30,7 @@ images as a set to an object in your site.
 ## Installation
 
 ```
-npm install pinax-images-panel
+npm install pinax-images-panel --save
 ```
 
 
