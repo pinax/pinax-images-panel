@@ -1,30 +1,32 @@
-var React = require("react");
+import React from 'react';
 
-var PreviewImage = React.createClass({
-    propTypes: {
-        image: React.PropTypes.object.isRequired,
-        deleteImage: React.PropTypes.func.isRequired,
-        markPrimaryImage: React.PropTypes.func.isRequired
-    },
-    handleDeleteClick: function () {
+class PreviewImage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleDeleteClick = this.handleDeleteClick.bind(this);
+        this.handleMarkPrimaryClick = this.handleMarkPrimaryClick.bind(this);
+        this.render = this.render.bind(this);
+    }
+    handleDeleteClick() {
         this.props.deleteImage(this.props.image);
-    },
-    handleMarkPrimaryClick: function () {
+    }
+    handleMarkPrimaryClick() {
         this.props.markPrimaryImage(this.props.image);
-    },
-    render: function () {
-        var previewImage = {},
-            selectedImageClassName = "selected-image";
+    }
+    render() {
+        let previewImage = {};
+        let selectedImageClassName = 'selected-image';
         if (this.props.image.is_primary) {
-            selectedImageClassName += " primary";
+            selectedImageClassName += ' primary';
         }
         if (this.props.image.medium_thumbnail) {
-            var background = "url(" + this.props.image.medium_thumbnail + ")";
+            const thumb = this.props.image.medium_thumbnail;
+            const background = `url(${thumb})`;
             previewImage = {
                backgroundImage: background
             };
         } else {
-            selectedImageClassName += " empty";
+            selectedImageClassName += ' empty';
         }
         return (
             <div className="col-md-9">
@@ -41,6 +43,12 @@ var PreviewImage = React.createClass({
             </div>
         );
     }
-});
+}
+
+PreviewImage.propTypes = {
+    image: React.PropTypes.object.isRequired,
+    deleteImage: React.PropTypes.func.isRequired,
+    markPrimaryImage: React.PropTypes.func.isRequired
+};
 
 module.exports = PreviewImage;

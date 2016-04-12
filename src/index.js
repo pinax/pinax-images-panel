@@ -1,3 +1,3 @@
-var ImagePanel = require("./components/ImagePanel");
+const ImagePanel = require('./components/ImagePanel');
 
 module.exports = ImagePanel;
