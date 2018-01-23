@@ -1,6 +1,7 @@
 /* global FileAPI */
 require('fileapi');
 
+import PropTypes from 'prop-types';
 import React from 'react';
 import helpers from '../utils/helpers';
 
@@ -72,13 +73,13 @@ class AddImage extends React.Component {
 }
 
 AddImage.propTypes = {
-    onUploadComplete: React.PropTypes.func,
-    onFileUploadComplete: React.PropTypes.func,
-    onUploadStart: React.PropTypes.func,
-    onProgress: React.PropTypes.func,
-    onFileProgress: React.PropTypes.func,
-    uploadUrl: React.PropTypes.string.isRequired,
-    imageSetId: React.PropTypes.number
+    onUploadComplete: PropTypes.func,
+    onFileUploadComplete: PropTypes.func,
+    onUploadStart: PropTypes.func,
+    onProgress: PropTypes.func,
+    onFileProgress: PropTypes.func,
+    uploadUrl: PropTypes.string.isRequired,
+    imageSetId: PropTypes.number
 };
 
 module.exports = AddImage;

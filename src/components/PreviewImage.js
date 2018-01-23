@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 class PreviewImage extends React.Component {
@@ -46,9 +47,9 @@ class PreviewImage extends React.Component {
 }
 
 PreviewImage.propTypes = {
-    image: React.PropTypes.object.isRequired,
-    deleteImage: React.PropTypes.func.isRequired,
-    markPrimaryImage: React.PropTypes.func.isRequired
+    image: PropTypes.object.isRequired,
+    deleteImage: PropTypes.func.isRequired,
+    markPrimaryImage: PropTypes.func.isRequired
 };
 
 module.exports = PreviewImage;

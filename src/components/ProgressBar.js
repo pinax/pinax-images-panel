@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 class ProgressBar extends React.Component {
@@ -21,7 +22,7 @@ class ProgressBar extends React.Component {
 }
 
 ProgressBar.propTypes = {
-    percentageComplete: React.PropTypes.number.isRequired
+    percentageComplete: PropTypes.number.isRequired
 };
 
 module.exports = ProgressBar;

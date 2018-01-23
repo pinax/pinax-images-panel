@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import Thumbnail from './Thumbnail';
 
@@ -26,8 +27,8 @@ class ImageList extends React.Component {
 }
 
 ImageList.propTypes = {
-    images: React.PropTypes.array.isRequired,
-    onSelectImage: React.PropTypes.func.isRequired
+    images: PropTypes.array.isRequired,
+    onSelectImage: PropTypes.func.isRequired
 };
 
 module.exports = ImageList;

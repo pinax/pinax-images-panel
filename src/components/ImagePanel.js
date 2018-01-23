@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import PreviewImage from './PreviewImage';
 import AddImage from './AddImage';
@@ -30,7 +31,6 @@ class ImagePanel extends React.Component {
         };
     }
     componentDidMount() {
-        console.log('mount', this.props);
         if (this.props.imagesUrl) {
             helpers
               .getImages(this.props.imagesUrl)
@@ -132,9 +132,9 @@ class ImagePanel extends React.Component {
 }
 
 ImagePanel.propTypes = {
-    initialImageSetId: React.PropTypes.number,
-    imagesUrl: React.PropTypes.string,
-    initialUploadUrl: React.PropTypes.string.isRequired
+    initialImageSetId: PropTypes.number,
+    imagesUrl: PropTypes.string,
+    initialUploadUrl: PropTypes.string.isRequired
 };
 
 module.exports = ImagePanel;

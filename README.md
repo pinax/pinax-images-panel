@@ -37,14 +37,17 @@ npm install pinax-images-panel --save
 ## Usage
 
 ```js
-var ImagePanel = require('pinax-images-panel'),
-    imagePanelElement = document.getElementById('image-panel'),
+import ImagePanel from 'pinax-images-panel';
+
+const imagePanelElement = document.getElementById('image-panel'),
 
 if (imagePanelElement) {
-  var imagesUrl = imagePanelElement.getAttribute('data-images-url'),
-      imageSetId = parseInt(imagePanelElement.getAttribute('data-image-set-id')),
-      uploadUrl = imagePanelElement.getAttribute('data-upload-url');
-  React.render(<ImagePanel imagesUrl={imagesUrl} initialUploadUrl={uploadUrl} initialImageSetId={imageSetId} />, imagePanelElement);
+  const imagesUrl = imagePanelElement.getAttribute('data-images-url');
+  const imageSetId = parseInt(imagePanelElement.getAttribute('data-image-set-id'));
+  const uploadUrl = imagePanelElement.getAttribute('data-upload-url');
+  React.render(
+    <ImagePanel imagesUrl={imagesUrl} initialUploadUrl={uploadUrl} initialImageSetId={imageSetId} />, imagePanelElement
+  );
 }
 ```
 
@@ -61,7 +64,7 @@ See [this blog post](http://blog.pinaxproject.com/2016/02/26/recap-february-pina
 
 In case of any questions we recommend you [join our Pinax Slack team](http://slack.pinaxproject.com) and ping us there instead of creating an issue on GitHub. Creating issues on GitHub is of course also valid but we are usually able to help you faster if you ping us in Slack.
 
-We also highly recommend reading our [Open Source and Self-Care blog post](http://blog.pinaxproject.com/2016/01/19/open-source-and-self-care/).  
+We also highly recommend reading our [Open Source and Self-Care blog post](http://blog.pinaxproject.com/2016/01/19/open-source-and-self-care/).
 
 
 Code of Conduct

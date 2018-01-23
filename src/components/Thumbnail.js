@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 class Thumbnail extends React.Component {
@@ -21,8 +22,8 @@ class Thumbnail extends React.Component {
 }
 
 Thumbnail.propTypes = {
-    image: React.PropTypes.object.isRequired,
-    onSelectImage: React.PropTypes.func.isRequired
+    image: PropTypes.object.isRequired,
+    onSelectImage: PropTypes.func.isRequired
 };
 
 module.exports = Thumbnail;

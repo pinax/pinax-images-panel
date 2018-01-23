@@ -1,0 +1,90 @@
+.media-panel {
+  border: 1px solid $gray-200;
+  border-radius: 4px;
+  .panel-footer {
+      border-top: 1px solid $gray-200;
+      padding: 10px 15px;
+      background: $gray-100;
+  }
+  .panel-footer, .panel-heading {
+      text-align: right;
+  }
+  .btn-add-image {
+      @extend .btn;
+      @extend .btn-success;
+      position: relative;
+      overflow: hidden;
+  }
+  .btn-add-image input[type=file] {
+      position: absolute;
+      top: 0;
+      right: 0;
+      min-width: 100%;
+      min-height: 100%;
+      font-size: 100px;
+      text-align: right;
+      filter: alpha(opacity=0);
+      opacity: 0;
+      outline: none;
+      background: white;
+      cursor: inherit;
+      display: block;
+  }
+  .primary {
+    border: 2px solid;
+    border-color: theme-color("success");
+  }
+  .panel-body {
+      padding: 10px;
+      .selected-image {
+          margin: auto;
+          width: 310px;
+          height: 310px;
+          #overlay {
+              background:rgba(0,0,0,.75);
+              text-align:center;
+              padding-top:129px;
+              opacity:0;
+              transition: opacity .25s ease;
+              height: 100%;
+          }
+          &.primary {
+              #overlay:hover {
+                  .make-primary-image {
+                      color: theme-color("success");
+                  }
+              }
+          }
+          &:hover {
+              #overlay {
+                  opacity: 1;
+                  .delete-image {
+                      color: theme-color("danger");
+                  }
+                  .make-primary-image {
+                      color: white;
+                      &:hover {
+                          color: theme-color("success");
+                      }
+                  }
+              }
+          }
+          &.empty {
+              #overlay { display: none }
+          }
+      }
+      .image-list {
+          overflow: auto;
+          height: 310px;
+          img {
+
+              margin-bottom: 8px;
+              cursor: pointer;
+              &.primary {
+                  border: 2px solid;
+                  border-color: theme-color("success");
+              }
+          }
+      }
+  }
+}
