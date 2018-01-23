@@ -1,6 +1,6 @@
 {
   "name": "pinax-images-panel",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "description": "a React component for uploading and managing images with the pinax-images Django reusable app",
   "main": "lib/index.js",
   "scripts": {
